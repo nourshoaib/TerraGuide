@@ -1,0 +1,211 @@
+:root {
+    --primary-color: #3a7d44;
+    --secondary-color: #f5f5dc;
+    --accent-color: #ffaa00;
+    --dark-color: #333;
+    --light-color: #fff;
+    --gray-color: #f8f9fa;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #777;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rufina', serif;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Utility Classes */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header p {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.section-header h2 {
+    font-size: 40px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+/* Header/Navigation */
+.welcome-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    min-height: 100vh;
+    padding: 200px 0;
+    color: var(--light-color);
+    position: relative;
+}
+
+.navbar {
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    font-family: 'Rufina', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--light-color);
+    padding: 15px 15px;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+}
+
+.nav.navbar-nav li a {
+    color: var(--light-color);
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.nav.navbar-nav li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.welcome-hero-txt {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.welcome-hero-txt h2 {
+    font-size: 48px;
+    color: var(--light-color);
+    margin-bottom: 20px;
+}
+
+.welcome-hero-txt p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.welcome-btn {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.welcome-btn:hover {
+    background: #2d6335;
+}
+
+/* Crop Input Form */
+.crop-input-form {
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.crop-input-form .form-group {
+    margin-bottom: 20px;
+}
+
+.crop-input-form label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.crop-input-form .form-control {
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Features Section */
+.service {
+    padding: 100px 0;
+    background: var(--gray-color);
+}
+
+.single-service-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--light-color);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.single-service-icon i {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.single-service-item h2 a {
+    color: var(--dark-color);
+    font-size: 22px;
+}
+
+/* Crop Advisor Section */
+.new-cars {
+    padding: 100px 0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: var(--gray-color);
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .welcome-hero-txt h2 {
+        font-size: 36px;
+    }
+    
+    .section-header h2 {
+        font-size: 30px;
+    }
+    
+    .welcome-hero {
+        padding: 150px 0;
+    }
+    
+    .crop-input-form {
+        padding: 20px;
+    }
+}

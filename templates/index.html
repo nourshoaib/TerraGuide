@@ -1,0 +1,217 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TerraGuide - AI Farming Assistant</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header id="home" class="welcome-hero">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Terra<span>Guide</span></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#crop-advisor">Crop Advisor</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Hero Content -->
+            <div class="welcome-hero-txt">
+                <h2>Optimize your farm with AI-powered insights</h2>
+                <p>
+                    TerraGuide helps farmers make data-driven decisions to increase yields while reducing water and fertilizer use.
+                </p>
+                
+            </div>
+            
+            <!-- Crop Advisor Form -->
+            <div class="crop-input-form">
+                <form id="cropForm" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Nitrogen (N) ppm</label>
+                                <input type="number" class="form-control" id="NInput" placeholder="e.g. 90" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Phosphorus (P) ppm</label>
+                                <input type="number" class="form-control" id="PInput" placeholder="e.g. 42" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Potassium (K) ppm</label>
+                                <input type="number" class="form-control" id="KInput" placeholder="e.g. 43" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Soil pH (0-14)</label>
+                                <input type="number" step="0.1" class="form-control" id="phInput" placeholder="e.g. 6.5" min="0" max="14" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Rainfall (mm)</label>
+                                <input type="number" class="form-control" id="rainfallInput" placeholder="e.g. 100" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-control" id="cityInput" placeholder="e.g. London" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="welcome-btn" id="submitCropData">
+                                Get Crop Recommendation
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <!-- Features Section -->
+<section id="features" class="service">
+    <div class="container">
+        <div class="section-header">
+            <p>Discover <span>the</span> benefits</p>
+            <h2>Key Features</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service-item">
+                    <div class="single-service-icon">
+                        <i class="fa fa-flask"></i>
+                    </div>
+                    <h2><a href="#">Soil Nutrient Analysis</a></h2>
+                    <p>
+                        Get precise crop recommendations based on your soil's nitrogen (N), phosphorus (P), 
+                        and potassium (K) levels along with pH balance.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service-item">
+                    <div class="single-service-icon">
+                        <i class="fa fa-cloud"></i>
+                    </div>
+                    <h2><a href="#">Weather-Aware Suggestions</a></h2>
+                    <p>
+                        Our system integrates real-time local weather data including temperature and humidity 
+                        to provide climate-appropriate crop recommendations.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service-item">
+                    <div class="single-service-icon">
+                        <i class="fa fa-bar-chart"></i>
+                    </div>
+                    <h2><a href="#">Data-Driven Results</a></h2>
+                    <p>
+                        Recommendations powered by machine learning trained on soil samples and 
+                        agricultural datasets for reliable suggestions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Crop Advisor Section -->
+    <section id="crop-advisor" class="new-cars">
+        <div class="container">
+            <div class="section-header">
+                <h2>Crop Advisor</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='robot.jpg') }}" 
+         alt="AI-powered crop recommendation robot"
+         class="img-responsive" 
+         style="border-radius: 8px; border: 2px solid #f5f5f5; max-height: 400px;">
+                </div>
+                <div class="col-md-6">
+                    <h3>How It Works</h3>
+                    <p>
+                        Our system analyzes multiple scientific parameters to provide optimal crop suggestions:
+                    </p>
+                    <ol>
+                        <li><strong>Soil Chemistry:</strong> N, P, K levels and pH balance</li>
+                        <li><strong>Climate Factors:</strong> Current temperature and humidity</li>
+                        <li><strong>Water Availability:</strong> Expected rainfall in your region</li>
+                        <li><strong>Location Data:</strong> Local weather patterns for your area</li>
+                    </ol>
+                    <div class="panel panel-default" style="margin-top: 20px;">
+                        <div class="panel-body">
+                            <h4>Ideal Input Ranges:</h4>
+                            <ul class="list-unstyled">
+                                <li><strong>N (Nitrogen):</strong> 0-200 ppm</li>
+                                <li><strong>P (Phosphorus):</strong> 0-200 ppm</li>
+                                <li><strong>K (Potassium):</strong> 0-200 ppm</li>
+                                <li><strong>pH:</strong> 0-14 scale</li>
+                                <li><strong>Rainfall:</strong> 0-300mm/month</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TerraGuide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
