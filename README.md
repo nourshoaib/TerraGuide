@@ -9,13 +9,22 @@ TerraGuide is an AI-powered farming assistant that recommends the most suitable 
 - 🌍 User-friendly web interface
 - 📦 Built with Flask and TensorFlow
 
-## 🔧 Technologies Used
+## 🔧 Technologies & Resources Used
 
+### Core Technologies
 - Python & Flask
 - TensorFlow (Keras)
-- OpenWeatherMap API
 - HTML, CSS, JavaScript
 
+### External APIs
+- [OpenWeatherMap API](https://openweathermap.org/api) - Provides real-time weather data
+  - Used Endpoint: Current Weather Data (free tier)
+
+### AI Model
+- Pre-trained crop recommendation model (crop_model.h5)
+  - Originally trained on [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
+  - Input features: N, P, K, temperature, humidity, ph, rainfall
+  - Output: 22 crop classes including rice, wheat, maize, etc.
 ## 📁 Project Structure
 
 ```
