@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Smooth scrolling
     $('a[href^="#"]').on('click', function (event) {
         var target = $(this.getAttribute('href'));
         if (target.length) {
@@ -13,7 +12,6 @@ $(document).ready(function () {
     $('#cropForm').on('submit', function (e) {
         e.preventDefault();
         
-        // Get form data with better parsing
         const formData = {
             ph: $('#phInput').val(),
             N: $('#NInput').val(),
@@ -23,16 +21,12 @@ $(document).ready(function () {
             city: $('#cityInput').val().trim()
         };
 
-        // Debug: Log the raw values
         console.log("Raw form values:", formData);
 
-        // Validate inputs
         const errors = [];
         
-        // Check for empty fields
         if (!formData.city) errors.push("City is required");
         
-        // Convert and check numeric fields
         const numericFields = {
             'pH': formData.ph,
             'Nitrogen (N)': formData.N,
@@ -50,7 +44,6 @@ $(document).ready(function () {
             }
         }
 
-        // Debug: Log parsed values
         console.log("Parsed form values:", {
             ph: formData.ph,
             N: formData.N,
@@ -65,11 +58,9 @@ $(document).ready(function () {
             return;
         }
 
-        // Show loading state
         const submitBtn = $('#submitCropData');
         submitBtn.html('<i class="fa fa-spinner fa-spin"></i> Processing...').prop('disabled', true);
 
-        // Prepare data for API
         const apiData = {
             ph: parseFloat(formData.ph),
             N: parseFloat(formData.N),
@@ -105,9 +96,7 @@ $(document).ready(function () {
         });
     });
     
-    // Function to display results
     function showResult(data) {
-        // Create a simple results display (you can enhance this)
         const resultHtml = `
             <div class="alert alert-success" style="margin-top: 20px;">
                 <h4>Recommended Crop: <strong>${data.crop.toUpperCase()}</strong></h4>
@@ -119,10 +108,8 @@ $(document).ready(function () {
             </div>
         `;
         
-        // Insert after the form
         $('#cropForm').after(resultHtml);
         
-        // Scroll to results
         $('html, body').animate({
             scrollTop: $('#cropForm').offset().top + $('#cropForm').height() + 50
         }, 500);
